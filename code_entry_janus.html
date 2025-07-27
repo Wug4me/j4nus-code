@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Janus - Entrée</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #ccc;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      flex-direction: column;
+    }
+    input, button {
+      background: none;
+      border: 1px solid #555;
+      color: #ccc;
+      padding: 10px;
+      font-size: 1em;
+      margin-top: 10px;
+    }
+    #message {
+      margin-top: 15px;
+      color: #a00;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <h1>Janus vous regarde</h1>
+  <p>Entrez le code.</p>
+  <input type="text" id="codeInput" placeholder="...">
+  <button onclick="checkCode()">Valider</button>
+  <div id="message"></div>
+
+  <script>
+    function checkCode() {
+      const input = document.getElementById("codeInput").value.trim();
+      const correctCode = "Persona";
+      if (input === correctCode) {
+        window.location.href = "https://sites.google.com/view/mis7re/accueil";
+      } else {
+        document.getElementById("message").textContent = "Ce n'est pas ce que Janus attendait.";
+      }
+    }
+  </script>
+</body>
+</html>
